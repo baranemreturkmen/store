@@ -23,10 +23,13 @@ function handleLogin(values){
                 <View style={styles.body_container}>
                 <Input placeholder="Kullanıcı adını giriniz..." 
                     value={values.username}
-                    onType={handleChange('username')}></Input>
+                    onType={handleChange('username')}
+                    iconName="account"></Input>
                 <Input placeholder="Şifrenizi giriniz..." 
                         value={values.password}
-                        onType={handleChange('password')}></Input>
+                        onType={handleChange('password')}
+                        iconName="key"
+                        isSecure></Input>
                 <Button text="Giriş Yap" onPress={handleSubmit}></Button>
             </View>   
             )} 
