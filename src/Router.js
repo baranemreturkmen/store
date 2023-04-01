@@ -17,6 +17,7 @@ const Router = () => {
                     title: 'Store',
                     headerStyle: {backgroundColor: '#4282e3'},
                     headerTitleStyle: {color: 'white'},
+                    headerBackTitle: {color: 'white'},
                 }}></Stack.Screen>
                 <Stack.Screen name={"ProductsPage"} component={Products} 
                 options={{

@@ -11,7 +11,7 @@ const Detail = ({route}) => {
     /*{id} yazsaydın eğer id.id yazmana gerek kalmayacaktı. route.params'dan dönen 
       json objesinde {id: ...} diye birşey var. sen onu alıyorsun direk olarak, json objesinin
       kendisini alıp obje.id diyerekten dönmek yerine. */
-    const {loading,error,data} = useFetch(Config.API_URL+"/"+id.id);
+    const {loading,error,data} = useFetch(Config.API_PRODUCT_URL+"/"+id.id);
     console.log(id);
     console.log(data)
     console.log(data.title)

@@ -11,7 +11,8 @@ const Input = ({placeholder, value, onType, iconName, isSecure}) => {
                        placeholder={placeholder} 
                        onChangeText={onType} 
                        value={value}
-                       secureTextEntry={isSecure}></TextInput>
+                       secureTextEntry={isSecure}
+                       autoCapitalize="none"></TextInput>
             <Icon name={iconName} size={25} color="gray"></Icon>
         </View>
     );
