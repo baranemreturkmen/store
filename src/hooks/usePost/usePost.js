@@ -14,6 +14,7 @@ function usePost(){
             console.log("2*");
             setData(responseData);
             setLoading(false);
+            setError(null);
         }
         catch(err){
             setError(err);
