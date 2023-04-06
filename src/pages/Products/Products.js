@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, Text, FlatList, ActivityIndicator } from "react-native";
+import { SafeAreaView, Text, FlatList, ActivityIndicator, Button, View } from "react-native";
 import Config from "react-native-config";
 import axios from 'axios';
 
@@ -7,6 +7,7 @@ import ProductCard from '../../components/ProductCard'
 import useFetch from "../../hooks/useFetch";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
+import { useDispatch } from "react-redux";
 
 const Products = ({navigation}) => {
     //component mount olduğunda fetch data ile veri çekiyorum.
@@ -15,6 +16,8 @@ const Products = ({navigation}) => {
     /*useEffect(() => {
         fetchData();
     },[]);*/
+
+    const dispatch = useDispatch();
 
     const {loading,data,error} = useFetch(Config.API_PRODUCT_URL);
     console.log('render');
@@ -38,7 +41,10 @@ const Products = ({navigation}) => {
     console.log('afterError');
 
     return(
-        <FlatList data={data} renderItem={renderProduct}></FlatList>
+        <View>
+            <Button title="LogOut" onPress={() => dispatch({type: 'SET_USER', payload: {user: null}})}></Button>
+            <FlatList data={data} renderItem={renderProduct}></FlatList>
+        </View>
     );
 }
 
