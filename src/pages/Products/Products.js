@@ -41,10 +41,7 @@ const Products = ({navigation}) => {
     console.log('afterError');
 
     return(
-        <View>
-            <Button title="LogOut" onPress={() => dispatch({type: 'SET_USER', payload: {user: null}})}></Button>
-            <FlatList data={data} renderItem={renderProduct}></FlatList>
-        </View>
+        <FlatList data={data} renderItem={renderProduct}></FlatList>
     );
 }
 
